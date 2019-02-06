@@ -7,10 +7,11 @@ NxCerti does exactly what the name suggests; it creates certificates if provided
 NOTE: If you have experience with programming, please look into the configuration variables present in `main.py` for better customization. The below instructions are with
 default configuration.
 
-The client uses pipenv and python imaging library for it's working.
+The client uses pipenv and python imaging library.
 
 - Keep the base template image for the certificates in the project folder with the name "template.png".
 - Keep the names to be put on certificates in a csv file "names.csv" (in the project's folder) with names at O'th index with no heading.
+- Modify settings such as color, font, font-size and position of the text in the configuration present inside `main.py`.
 
 ### First Run
 
