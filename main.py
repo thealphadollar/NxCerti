@@ -22,9 +22,6 @@ CONFIG ENDS
 NAMES = []
 
 temp_template = Image.open(TEMPLATE_PATH)
-template = Image.new('RGB', temp_template.size, (255, 255, 255))
-template.paste(temp_template, mask=temp_template.split()[3])
-raw_template = ImageDraw.Draw(template)
 
 with open(CSV_FILE, "r") as name_file:
     data = csv.reader(name_file)
@@ -43,6 +40,9 @@ third argument:  color
 fourth argument: font to be used
 """
 for name in NAMES:
+    template = Image.new('RGB', temp_template.size, (255, 255, 255))
+    template.paste(temp_template, mask=temp_template.split()[3])
+    raw_template = ImageDraw.Draw(template)
     name_width, name_height = raw_template.textsize(name, font=FONT)
     name_pos = (TEXT_MIDDLE_POS[0]-(name_width/2), TEXT_MIDDLE_POS[1]-(name_height/2))
     raw_template.text(name_pos, name, COLOR, FONT)
